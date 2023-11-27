@@ -1,63 +1,73 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Kalkulator Sederhana</title>
-</head>
-<body>
-
-<h2 align ="center">Kalkulator Sederhana</h2>
-<br>
+  <head>
+    <title>Kalkulator Sederhana Rifal</title>
+    <link rel="stylesheet" type="text/css" href="style.css"
+  </head>
+  <body>
+    <h2 align="center">Kalkulator Sederhana</h2>
+    <br />
     Angka ke -1 :
-    <input type="number" id="num1">
-        <select id="operator">
-            <option value="tambah">+</option>
-            <option value="kurang">-</option>
-            <option value="kali">*</option>
-            <option value="bagi">/</option>
-        </select>
+    <input
+      type="number"
+      id="num1"
+    />
+    <select id="operator">
+      <option value="tambah">+</option>
+      <option value="kurang">-</option>
+      <option value="kali">*</option>
+      <option value="bagi">/</option>
+    </select>
     Angka Ke -2 :
-    <input type="number" id="num2">
+    <input
+      type="number"
+      id="num2"
+    />
     <button onclick="hitung()">Submit</button>
 
-<br><br>
+    <br /><br />
 
-<p>Hasil: <span id="hasil"></span></p>
+    <p>Hasil: <span id="hasil"></span></p>
 
-<script>
-  function hitung() {
-    let num1 = parseFloat(document.getElementById("num1").value);
-    let num2 = parseFloat(document.getElementById("num2").value);
-    let operator = document.getElementById("operator").value;
-    let hasil;
+    <script>
+      function hitung() {
+        let num1 = parseFloat(document.getElementById('num1').value);
+        let num2 = parseFloat(document.getElementById('num2').value);
+        let operator = document.getElementById('operator').value;
+        let hasil;
 
-    switch (operator) {
-      case "tambah":
-        hasil = num1 + num2;
-        break;
-      case "kurang":
-        hasil = num1 - num2;
-        break;
-      case "kali":
-        hasil = num1 * num2;
-        break;
-      case "bagi":
-        if (num2 === 0) {
-          hasil = "Tidak bisa dibagi dengan 0";
-        } else {
-          hasil = num1 / num2;
+        switch (operator) {
+          case 'tambah':
+            hasil = num1 + num2;
+            break;
+          case 'kurang':
+            hasil = num1 - num2;
+            break;
+          case 'kali':
+            hasil = num1 * num2;
+            break;
+          case 'bagi':
+            if (num2 === 0) {
+              hasil = 'Tidak bisa dibagi dengan 0';
+            } else {
+              hasil = num1 / num2;
+            }
+            break;
+          default:
+            hasil = 'Pilih operasi';
+            break;
         }
-        break;
-      default:
-        hasil = "Pilih operasi";
-        break;
-    }
 
-    document.getElementById("hasil").innerHTML = hasil;
-  }
-</script>
-<br><br>
-    <footer style="color: dodgerblue" align = "center">&copy;Copyright Muhammad Rifal Junaidi
+        document.getElementById('hasil').innerHTML = hasil;
+      }
+    </script>
+    <br /><br />
+    <footer
+      style="color: dodgerblue"
+      align="center"
+    >
+      &copy;Copyright Muhammad Rifal Junaidi
     </footer>
-<hr>
-</body>
+    <hr />
+  </body>
 </html>
